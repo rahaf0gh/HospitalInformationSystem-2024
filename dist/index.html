@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@200..1000&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Hospital Information System</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo text-center">
+            <a href="HospitalInformation.html" class="text-5xl aref-ruqaa-regular">عناية طبّية</a>
+        </div>
+
+        <div id="UlNav">
+            <a href="#Surgeries" class="transition">العمليات الحديثة</a>
+            <a href="#numbers" class="transition">المرضى</a>
+            <a href="#doctorsCalender" class="transition green">عدد الأطباء</a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    معلومات
+                </button>
+                <div class="dropdown-content">
+                    <a href="#footer">تواصل معنا</a>
+                    <a href="#footer">موقعنا</a>
+                </div>
+            </div>
+        </div>
+
+        <i id="bar-btn" class="fa-solid fa-bars" onclick="displayMenu()"></i>
+        <i id="amark-btn" class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+    </nav>
+
+    <header class="bg-bgHeader">
+        <h1 class="text-4xl amiri-regular">هنا حيث نوفر</h1>
+        <h1 class="amiri-regular">كامل الرعاية والخدمات الصحية</h1>
+        <h1 class="amiri-regular">لتحقيق صحة الفرد والمجتمع</h1>
+    </header>
+
+    <section class="Numbers flex justify-center items-center my-12 gap-12" id="numbers">
+        <div class="rect p-5 rounded-lg Shadow block1" style="border: 1px solid rgba(115, 115, 115, 0.333)" >
+            <h1 class="No text-6xl font-semibold text-green" data-goal="40">
+                000
+            </h1>
+            <div class="NO-details flex justify-between gap-6 items-center text-gray-400 mt-4">
+                <p class="text-lg">مرضى جدد</p>
+                <i class="fa-solid fa-user-group text-4xl"></i>
+            </div>
+        </div>
+
+        <div class="rect p-5 rounded-lg Shadow block1" style="border: 1px solid rgba(115, 115, 115, 0.333)">
+            <h1 class="No text-6xl font-semibold text-green" data-goal="23">
+                000
+            </h1>
+            <div class="NO-details flex justify-between gap-6 items-center text-gray-400 mt-4">
+                <p class="text-lg">أطباءنا</p>
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+            </div>
+        </div>
+
+        <div class="rect p-5 rounded-lg Shadow block1" style="border: 1px solid rgba(115, 115, 115, 0.333)">
+            <h1 class="No text-6xl font-semibold text-green" data-goal="8">
+                000
+            </h1>
+            <div class="NO-details flex justify-between gap-6 items-center text-gray-400 mt-4">
+                <p class="text-lg">عمليات الجراحة الحديثة</p>
+                <i class="fa-solid fa-stethoscope text-4xl"></i>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="container-doctors-activity px-20 my-32 flex items-center gap-7" id="doctorsCalender">
+        <section class="DoctorsList Shadow block1">
+            <h1 class="my-3 mr-4 font-semibold text-xl">قائمة الأطباء </h1>
+            <input type="text" placeholder="البحث.." id="myInput" onkeyup="searchFun()">
+            <table id="myTable">
+                <tr>
+                    <td class="text-center">1</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 1.jpg" alt="">د.أحمد صالح</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">2</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 2.jpg" alt="">د.أحمد صالح</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">3</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 3.jpg" alt="">د.علي سالم</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">4</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 1.jpg" alt="">د.عبدالله محمد</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">5</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 2.jpg" alt="">د.محمد محفوظ</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">6</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 3.jpg" alt="">د.صالح خالد</td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">7</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 1.jpg" alt="">د.سعيد سعد</td>
+                </tr>
+                <p id="notFound" class="text-center m-2" style="display: none;"></p>
+            </table>
+        </section>
+
+        <div class="last7Days p-4 Shadow block1">
+            <h1 class="font-semibold text-xl">آخر سبعة أيام</h1>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <div class="surgeries-calender flex justify-between items-center px-12">
+
+
+        <div class="surgeries bg-white Shadow rounded-md block1" id="Surgeries">
+            <h1 class="my-6 mr-4 font-semibold text-xl">عمليات اليوم</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>اسم العملية</th>
+                        <th>اسم الدكتور</th>
+                        <th>نوع العلمية</th>
+                        <th>الحالة</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>الزائدة الدودية</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 1.jpg" alt="">د.أحمد صالح</td>
+                    <td>عمليات اليوم الواحد</td>
+                    <td class="text-center">
+                        <p class="status">ناجحة</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>لحمية أنف</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 2.jpg" alt="">د.أحمد صالح</td>
+                    <td>عمليات اليوم الواحد</td>
+                    <td class="text-center">
+                        <p class="status statusOrange">لم تبدأ</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>جراحة قلب مفتوح</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 3.jpg" alt="">د.علي سالم</td>
+                    <td>عمليات تنويم</td>
+                    <td class="text-center">
+                        <p class="status statusRed">مستمرة</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>عمليات العيون</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 1.jpg" alt="">د.عبدالله محمد</td>
+                    <td>عمليات اليوم الواحد</td>
+                    <td class="text-center">
+                        <p class="status statusOrange">لم تبدأ</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>جراحة الكبد</td>
+                    <td class="flex gap-3 items-center"><img src="img/doctor 2.jpg" alt="">د.محمد محفوظ</td>
+                    <td>عمليات تنويم</td>
+                    <td class="text-center">
+                        <p class="status statusRed">مستمرة</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="contianer block1">
+            <div class="calendar">
+                <div class="calendar-header">
+                    <span class="month-picker" id="month-picker"> May </span>
+                    <div class="year-picker" id="year-picker">
+                        <span class="year-change" id="pre-year">
+                            <pre><</pre>
+                        </span>
+                        <span id="year">2020 </span>
+                        <span class="year-change" id="next-year">
+                            <pre>></pre>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="calendar-body">
+                    <div class="calendar-week-days">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="calendar-days">
+                    </div>
+                </div>
+                <div class="calendar-footer">
+                </div>
+                <div class="date-time-formate">
+                    <div class="day-text-formate">TODAY</div>
+                    <div class="date-time-value">
+                        <div class="time-formate">01:41:20</div>
+                        <div class="date-formate">03 - march - 2022</div>
+                    </div>
+                </div>
+                <div class="month-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sun'],
+                datasets: [{
+                    label: 'Patient',
+                    data: [12, 19, 31, 25, 12, 50, 33],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                backgroundColor: '#29ADB2'
+            }
+        });
+    </script>
+
+
+
+
+    <footer class="py-6 mt-12" id="footer">
+        <div class="contact-us">
+            <h1 class="text-xl font-semibold mb-3">تواصل معنا</h1>
+            <div class="icon-container">
+                <i class="fa-brands fa-whatsapp text-lg ml-1 mb-1"></i>
+                <a href="#">+066 50 239 9761</a>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-solid fa-x text-lg ml-1"></i>
+                <a href="#">@Enaya-99</a>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-brands fa-instagram text-lg ml-1"></i>
+                <a href="#">@Enaya-99</a>
+            </div>
+        </div>
+
+        <div class="location my-5">
+            <h1 class="text-xl font-semibold mb-3">موقعنا</h1>
+            <div class="icon-container flex items-center justify-center gap-2">
+                <i class="fa-solid fa-location-dot"></i>
+            <h1>حي الصفا - شارع الملك عبدالعزيز</h1>
+            </div>
+        </div>
+    </footer>
+    <script src="javaScript.js"></script>
+</body>
+
+</html>
